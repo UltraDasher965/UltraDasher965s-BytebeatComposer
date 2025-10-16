@@ -1,0 +1,29 @@
+[
+    {
+        "name": "i don't know",
+        "date": "Oct 15, 2025",
+        "sampleRate": 11025,
+        "codeOriginal": "t*(t>>7|0x34927920>>(t>>12&31))"
+    },
+    {
+        "name": "simple floatbeat",
+	"mode": Floatbeat
+        "date": "Oct 15, 2025",
+        "sampleRate": 48000,
+        "codeOriginal": "t/=6, sin(20*cbrt(t%4096))*(4E1*4/(t%4096))+(((t*'1204204012041242'[15&t>>10]*[1,1,1.5,1.33][3&t>>14])&255)/256-0.5)+(sin(t*[1,1,1.5,1.33][3&t>>14]*PI/64)*0.5)"
+    },
+    {
+        "name": "simple floatbeat but with original sample rate",
+	"mode": Floatbeat
+        "date": "Oct 15, 2025",
+        "sampleRate": 8000,
+        "codeOriginal": "sin(20*cbrt(t%4096))*(4E1*4/(t%4096))+(((t*'1204204012041242'[15&t>>10]*[1,1,1.5,1.33][3&t>>14])&255)/256)+(sin(t*[1,1,1.5,1.33][3&t>>14]*PI/64)*0.5)"
+    },
+    {
+        "name": "detuned simple floatbeat",
+	"mode": Floatbeat
+        "date": "Oct 15, 2025",
+        "sampleRate": 48000,
+        "codeOriginal": "t/=6, [sin(20*cbrt(t%4096))*(4E1*4/(t%4096))+((((t*0.99)*'1204204012041242'[15&t>>10]*[1,1,1.5,1.33][3&t>>14])&255)/256-0.5)+(sin(t*[1,1,1.5,1.33][3&t>>14]*PI/64)*0.5), sin(20*cbrt(t%4096))*(4E1*4/(t%4096))+((((t*1.01)*'1204204012041242'[15&t>>10]*[1,1,1.5,1.33][3&t>>14])&255)/256-0.5)+(sin(t*[1,1,1.5,1.33][3&t>>14]*PI/64)*0.5)]"
+    },
+]
