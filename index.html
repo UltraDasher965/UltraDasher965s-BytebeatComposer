@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>UD965's Bytebeat Composer</title>
 	<link rel="canonical" href="https://ultradasher965.github.io/Dashy_BytebeatComposer">
-	<link rel="shortcut icon" href="channels4_profile.jpg">
+	<link rel="shortcut icon" href="icon.jpg">
 	<link rel="stylesheet" type="text/css" href="bytebeat.css?version=2023022000">
 	<link rel="modulepreload" href="./scripts/audioProcessor.mjs?version=2023022000">
 	<script type="module" async src="./scripts/bytebeat.mjs?version=2023022000"></script>
@@ -15,7 +15,7 @@
 	<main id="content">
 		<section id="container-fixed">
 			<div id="editor-container">
-				<textarea  id="editor-default" spellcheck="false">(9*t&t>>6)&(3*t&t>>11|7*t&t>>9)&t>>6</textarea>
+				<textarea  id="editor-default" spellcheck="false">((9*t&t>>6)^(3*t&t>>11|7*t&t>>9))&t>>5</textarea>
 			</div>
 			<div class="controls">
 				<div class="controls-group controls-grow">
@@ -57,7 +57,10 @@
 				<select id="control-drawmode" class="control-select controls-grow" title="Drawing mode">
 					<option value="Points" selected>Points</option>
 					<option value="Waveform">Waveform</option>
-					<option value="None">None</option>
+					<option value="Diagram" selected>Diagram</option>
+					<option value="Combined">Combined</option>
+					<option value="Fast Fourier Transform">Waveform</option>
+					<option value="None" selected>Points</option>
 				</select>
 				<select id="control-mode" class="control-select controls-grow" title="Sound mode">
 					<option value="Bytebeat" selected>Bytebeat (0 to 255)</option>
@@ -74,7 +77,7 @@
 						<option value="4096">4096Hz</option>
 						<option value="6000">6kHz</option>
 						<option value="8000">8kHz</option>
-                                                <option value="8192">8192Hz</option>
+                        <option value="8192">8192Hz</option>
 						<option value="11025">11025Hz</option>
 						<option value="12000">12kHz</option>
 						<option value="16000">16kHz</option>
@@ -86,10 +89,10 @@
 						<option value="44100">44100Hz</option>
 						<option value="48000">48kHz</option>	
 						<option value="54000">54kHz</option>
-                                                <option value="62000">62kHz</option>
+                        <option value="62000">62kHz</option>
 						<option value="65536">65536Hz</option>
-                                                <option value="88200">88200Hz</option>
-                                                <option value="96000">96kHz</option>
+                        <option value="88200">88200Hz</option>
+                        <option value="96000">96kHz</option>
 					</select>
 				</div>
 				<div class="controls-group controls-grow" width="128">
@@ -150,7 +153,7 @@
 					<b>Floatbeat:</b> assumes output is -1.0 to 1.0.<br>
 					<b>Funcbeat:</b> needs functions to generate sounds instead of the original time variable.<br>
 					<b>Bitbeat:</b> same as bytebeat but output is a 1bit value.<br>
-					<b>Tanmode:</b> replaces "t" with "tan(t)".<br>
+					<b>Tanmode:</b> transforms the time variable with its tangent version.<br>
 					<br>
 					This website is the fork of <a href="http://entropedia.co.uk/generative_music/" target="_blank">8-bit Generative Composer</a> by <a href="http://twitter.com/paul_hayes/" target="_blank">@paul_hayes</a>.<br>
 					Forked by SthephanShi aka Viraya.<br>
@@ -168,7 +171,7 @@
 					Credits:<br>
 					- SthephanShi for the original site (interface, sound generator, most of the functions...)<br>
 					- Chasyxx for the exotic functions and the Bitbeat mode<br>
-					- ANoUserXD / BsquareII for the Tanmode mode (kinda weird to say that because I'm not a native English speaker but ok)<br>
+					- psubscirbe for the Tanmode mode (kinda weird to say that because I'm not a native English speaker but ok)<br>
 				</article>
 			</details>
 			<details class="library-content">
@@ -180,7 +183,7 @@
 			</details>
 			<details class="library-content">
 				<summary class="library-header">
-					<h1>UltraDasher965 &mdash; Bytebeats made by UltraDasher965 / Lavender</h1>
+					<h1>UltraDasher965 - Bytebeats made by UltraDasher965</h1>
 					<svg class="loading-wait hidden"><use xlink:href="#symbol-wait"/></svg>
 				</summary>
 				<div id="library-ultradasher965" class="library-container"></div>
@@ -203,6 +206,7 @@
 							<option value="Orange">Orange</option>
 							<option value="Purple">Purple</option>
 							<option value="Teal">Teal</option>
+							<option value="Aquamarine">Aquamarine</option>
 						</select>
 						<b>Theme style</b>
 					</label>
